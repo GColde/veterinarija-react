@@ -3,7 +3,7 @@ import NavigationBar from "../components/NaviagationBar/NavigationBar";
 import styled from "styled-components";
 
 const StyledContainer = styled.div`
-  max-width: 1100px;
+  max-width: 100%;
   margin: 0 30px;
   padding-top: 3rem;
 `;

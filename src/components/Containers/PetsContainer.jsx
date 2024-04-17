@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Button from "../Button/Button";
+import { deletePets } from "../../api/pets";
 
 const StyledContainer = styled.div`
   width: 25rem;
@@ -26,15 +27,25 @@ const StyledButtonContainer = styled.div`
   align-items: center;
   margin: 1rem;
 `;
-const PetsContainer = () => {
+const PetsContainer = ({ pet }) => {
   return (
     <StyledContainer>
-      <StyledTitle>Levis</StyledTitle>
-      <StyledDescription>2001-12-25</StyledDescription>
-      <StyledDescription>petras@adf.com</StyledDescription>
+      <StyledTitle>{pet.name}</StyledTitle>
+      <StyledDescription>{pet.dob}</StyledDescription>
+      <StyledDescription>{pet.client_email}</StyledDescription>
       <StyledButtonContainer>
-        <Button>ViewLog</Button>
-        <Button inverted>ViewLog</Button>
+        <Button>VIEW LOG</Button>
+        <Button
+          onClick={async () => {
+            {
+              await deletePets(pet.id);
+              window.location.reload();
+            }
+          }}
+          inverted
+        >
+          DELETE
+        </Button>
       </StyledButtonContainer>
     </StyledContainer>
   );

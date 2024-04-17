@@ -1,14 +1,11 @@
 import PetList from "../pages/Pets/PetsList";
+import NewPet from "../pages/Pets/NewPet";
 import BasicLayout from "../layouts/BasicLayout";
 
 export const ROUTES = {
   PETS: "/",
-  REGISTER: "/register",
-  ORDERS: "/orders",
-  NEW_ORDER: "/orders/new",
-  ORDER: "/orders/:id",
-  HOTELS: "/hotels",
-  NEW_HOTEL: "/hotels/new",
+  NEW_PET: "/pets/new",
+  MEDICATIONS: "/medications",
 };
 
 export const routes = [
@@ -17,15 +14,20 @@ export const routes = [
     Component: PetList,
     Layout: BasicLayout,
   },
+  {
+    path: ROUTES.NEW_PET,
+    Component: NewPet,
+    Layout: BasicLayout,
+  },
 ];
 
 export const navigationBarLinks = [
   {
-    title: "Orders",
-    path: ROUTES.ORDERS,
+    title: "Pets",
+    path: ROUTES.PETS,
   },
   {
-    title: "Hotels",
-    path: ROUTES.HOTELS,
+    title: "Medications",
+    path: ROUTES.MEDICATIONS,
   },
 ];

@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
-const StylizedButton = styled.a`
+const StylizedButton = styled.button`
   --accent-color: #000000;
 
   width: 11rem;
